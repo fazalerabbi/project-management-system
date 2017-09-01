@@ -3,18 +3,20 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AuthModule } from "./components/auth/auth.module";
-import { AppRoutingModule } from "./routes/app.routing.module";
 
 import { AppComponent } from './app.component';
-import { ProfileModule } from "./components/profile/profile.module";
-import { ProjectModule } from "./components/project/project.module";
+import { AuthModule } from "./modules/auth/auth.module";
+import { ProfileModule } from "./modules/profile/profile.module";
+import { ProjectModule } from "./modules/project/project.module";
+import { AppRoutingModule } from "./app.routing.module";
+import { UserComponent } from './modules/users/components/user/user.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
