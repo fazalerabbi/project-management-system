@@ -1,35 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-
 import { AppComponent } from './app.component';
-import { AuthModule } from "./modules/auth/auth.module";
-import { ProfileModule } from "./modules/profile/profile.module";
-import { ProjectModule } from "./modules/project/project.module";
-import { AppRoutingModule } from "./app.routing.module";
-import { UserComponent } from './modules/users/components/user/user.component';
-
-
+import { AppRoutingModule } from './app.routing.module';
+import { AuthModule } from './modules/auth/auth.module';
+import { ProfileModule } from './modules/profile/profile.module';
+import { ProjectModule } from './modules/project/project.module';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { SideBarComponent } from './side-bar.component';
+import { TaskModule } from './modules/task/task.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    UserComponent
+    SideBarComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
 
     AuthModule,
     ProfileModule,
     ProjectModule,
-
+    DashboardModule,
+    TaskModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
