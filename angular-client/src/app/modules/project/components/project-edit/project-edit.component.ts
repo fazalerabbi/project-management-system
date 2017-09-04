@@ -6,6 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project-edit.component.css']
 })
 export class ProjectEditComponent implements OnInit {
+  project = {
+    name: 'My Project',
+    description: 'My Project description',
+    users: [
+      {
+        id: 1,
+        name: 'Fazal'
+      },
+      {
+        id: 2,
+        name: 'Ali'
+      },
+    ]
+  }
 
   constructor() { }
 

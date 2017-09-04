@@ -1,5 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {NgForm} from "@angular/forms";
+import {Component, OnInit, } from '@angular/core';
 
 @Component({
   selector: 'app-project-create',
@@ -7,14 +6,20 @@ import {NgForm} from "@angular/forms";
   styleUrls: ['./project-create.component.css']
 })
 export class ProjectCreateComponent implements OnInit {
-  @ViewChild('form') projectCreateForm: NgForm;
+  project = {
+    name: '',
+    description: '',
+    users: [
+    ]
+  }
   constructor() { }
 
   ngOnInit() {
+    console.log(this.project);
   }
 
   onSubmit() {
-    console.log(this.projectCreateForm);
+    console.log();
   }
 
 }

@@ -5,12 +5,14 @@ import { ProjectEditComponent } from './components/project-edit/project-edit.com
 import { ProjectComponent } from './components/project.component';
 import { ProjectRoutingModule } from './project.routing.module';
 import { FormsModule } from "@angular/forms";
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   declarations: [
     ProjectComponent,
     ProjectCreateComponent,
-    ProjectEditComponent
+    ProjectEditComponent,
+    FormComponent,
   ],
   imports: [
     FormsModule,
