@@ -10,6 +10,7 @@ import { ProjectModule } from './modules/project/project.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { SideBarComponent } from './side-bar.component';
 import { TaskModule } from './modules/task/task.module';
+import { SettingsModule } from './modules/settings/settings.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { TaskModule } from './modules/task/task.module';
     ProjectModule,
     DashboardModule,
     TaskModule,
+    SettingsModule,
     AppRoutingModule
   ],
   providers: [],
