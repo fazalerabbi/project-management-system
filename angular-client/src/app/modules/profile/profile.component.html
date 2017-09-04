@@ -1,0 +1,98 @@
+<div class="row">
+  <div class="col-sm-6 col-md-6 col-xs-12">
+    <form class="form-horizontal form-label-left">
+      <span class="section">Personal Info</span>
+
+      <div class="form-group">
+        <label class="control-label col-md-3 col-sm-2 col-xs-12" for="name"> Name <span class="required">*</span>
+        </label>
+        <div class="col-md-8 col-sm-10 col-xs-12">
+          <input id="name" class="form-control col-md-7 col-xs-12" placeholder="both name(s) e.g Jon Doe" required type="text">
+          <span class="help-desk" style="color: #E74C3C;">Required</span>
+        </div>
+
+      </div>
+      <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">User name <span class="required">*</span>
+        </label>
+        <div class="col-md-8 col-sm-10 col-xs-12">
+          <input type="text" id="user_name" name="user_name" required class="form-control col-md-7 col-xs-12" disabled="disabled">
+          <span class="help-desk" style="color: #E74C3C;">Required</span>
+        </div>
+      </div>
+      <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Email <span class="required">*</span>
+        </label>
+        <div class="col-md-8 col-sm-10 col-xs-12">
+          <input type="email" id="email" name="email" required="required" class="form-control col-md-7 col-xs-12">
+          <span class="help-desk" style="color: #E74C3C;">Required</span>
+        </div>
+      </div>
+
+      <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="company"> Company <span class="required">*</span>
+        </label>
+        <div class="col-md-8 col-sm-10 col-xs-12">
+          <input type="url" id="company" name="company" required class="form-control col-md-7 col-xs-12">
+          <span class="help-desk" style="color: #E74C3C;">Required</span>
+        </div>
+      </div>
+      <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">Website URL <span class="required">*</span>
+        </label>
+        <div class="col-md-8 col-sm-10 col-xs-12">
+          <input type="url" id="website" name="website" required="required" placeholder="www.website.com" class="form-control col-md-7 col-xs-12">
+          <span class="help-desk" style="color: #E74C3C;">Required</span>
+        </div>
+      </div>
+      <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">Occupation <span class="required">*</span>
+        </label>
+        <div class="col-md-8 col-sm-10 col-xs-12">
+          <input id="occupation" type="text" name="occupation" class="optional form-control col-md-7 col-xs-12">
+          <span class="help-desk" style="color: #E74C3C;">Required</span>
+        </div>
+      </div>
+      <div class="ln_solid"></div>
+      <div class="form-group">
+        <div class="col-md-8 col-md-offset-3">
+          <button id="save" type="submit" class="btn btn-success">Update Profile</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-sm-6 col-md-6 col-xs-12">
+    <form class="form-horizontal form-label-left">
+      <span class="section">Reset Password</span>
+      <div class="item form-group">
+        <label for="old_password" class="control-label col-md-3 col-sm-3 col-xs-12">Old Password</label>
+        <div class="col-md-8 col-sm-10 col-xs-12">
+          <input id="old_password" type="password" name="password" class="form-control col-md-7 col-xs-12" required>
+          <span class="help-desk" style="color: #E74C3C;">Required</span>
+        </div>
+      </div>
+      <div class="item form-group">
+        <label for="new_password" class="control-label col-md-3 col-sm-3 col-xs-12">New Password</label>
+        <div class="col-md-8 col-sm-10 col-xs-12">
+          <input id="new_password" type="password" name="new_password" class="form-control col-md-7 col-xs-12" required>
+          <span class="help-desk" style="color: #E74C3C;">Required</span>
+        </div>
+      </div>
+      <div class="item form-group">
+        <label for="repeat_password" class="control-label col-md-3 col-sm-3 col-xs-12">Repeat Password</label>
+        <div class="col-md-8 col-sm-10 col-xs-12">
+          <input id="repeat_password" type="password" name="repeat_password" class="form-control col-md-7 col-xs-12" required>
+          <span class="help-desk" style="color: #E74C3C;">Required</span>
+        </div>
+      </div>
+      <div class="ln_solid"></div>
+      <div class="form-group">
+        <div class="col-md-8 col-md-offset-3">
+          <button id="save_password" type="submit" class="btn btn-success">Update password</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+

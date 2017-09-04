@@ -1,12 +1,10 @@
-<h1>New Project</h1>
-<br />
-<br />
 <form  class="form-horizontal form-label-left" #form="ngForm" (ngSubmit)="onSubmit()">
+  <span class="section">Create Project</span>
 
   <div class="form-group">
     <label class="control-label col-md-2 col-sm-2 col-xs-12" for="name">Name <span class="required">*</span>
     </label>
-    <div class="col-md-4 col-sm-4 col-xs-12">
+    <div class="col-md-6 col-sm-6 col-xs-12">
       <input type="text" id="name" name="name" class="form-control col-md-7 col-xs-12" required ngModel>
       <span class="help-desk" style="color: #E74C3C;">Required</span>
     </div>
@@ -88,7 +86,7 @@
 
   <div class="form-group">
     <label class="control-label col-md-2 col-sm-2 col-xs-12">Add users to project</label>
-    <div class="col-md-4 col-sm-4 col-xs-12">
+    <div class="col-md-6 col-sm-6 col-xs-12">
       <select class="select2_multiple form-control" multiple="multiple" name="users" data-placeholder="Select Users" required ngModel>
         <option>Choose option</option>
         <option>Ali</option>
