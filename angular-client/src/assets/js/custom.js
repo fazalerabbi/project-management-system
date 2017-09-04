@@ -109,14 +109,7 @@ $('.collapse-link').click(function () {
 });
 /** ******  /collapse panel  *********************** **/
 /** ******  iswitch  *********************** **/
-if ($("input.flat")[0]) {
-    $(document).ready(function () {
-        $('input.flat').iCheck({
-            checkboxClass: 'icheckbox_flat-green',
-            radioClass: 'iradio_flat-green'
-        });
-    });
-}
+
 /** ******  /iswitch  *********************** **/
 /** ******  star rating  *********************** **/
 // Starrr plugin (https://github.com/dobtco/starrr)
@@ -236,10 +229,24 @@ $(document).ready(function () {
         $('#count-existing').html(value);
     });
 
-  $(".select2_multiple").select2({
-    placeholder: "Select Users",
+  $("select.select2_multiple").select2({
+    placeholder: $(this).attr('placeholder'),
     allowClear: true
   });
+
+  $('.date-picker').daterangepicker({
+    singleDatePicker: true,
+    calender_style: "picker_4"
+  }, function(start, end, label) {
+    console.log(start.toISOString(), end.toISOString(), label);
+  });
+
+  if ($("input.flat")[0]) {
+      $('input.flat').iCheck({
+        checkboxClass: 'icheckbox_flat-green',
+        radioClass: 'iradio_flat-green'
+      });
+  }
 
 
 
@@ -414,9 +421,24 @@ $(function() {
     };
   });
   // Initialize autocomplete with custom appendTo:
-  $('#autocomplete-custom-append').autocomplete({
+  $('#assignee').autocomplete({
     lookup: countriesArray,
-    appendTo: '#autocomplete-container'
+    appendTo: '#autocomplete-assignee'
+  });
+});
+
+$(function() {
+  'use strict';
+  var countriesArray = $.map(countries, function(value, key) {
+    return {
+      value: value,
+      data: key
+    };
+  });
+  // Initialize autocomplete with custom appendTo:
+  $('#parent').autocomplete({
+    lookup: countriesArray,
+    appendTo: '#autocomplete-parent'
   });
 });
 

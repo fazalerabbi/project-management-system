@@ -1,11 +1,11 @@
 <h1>New Task</h1>
 <br />
 <br />
-<form  class="form-horizontal form-label-left" (ngSubmit)="onSubmit()">
+<form  class="form-horizontal form-label-left" >
 
   <div class="form-group">
-    <label class="control-label col-md-2 col-sm-2 col-xs-12">Tracker</label>
-    <div class="col-md-9 col-sm-9 col-xs-12">
+    <label class="control-label col-md-2 col-sm-2 col-xs-12">Tracker <span class="required">*</span></label>
+    <div class="col-md-5 col-sm-5 col-xs-12">
       <select class="form-control">
         <option selected="selected" value="4">Task</option>
         <option value="2">Feature</option>
@@ -15,11 +15,10 @@
         <option value="6">User Story</option>
         <option value="7">Module</option>
         <option value="8">Step</option>
-        <option value="9">Tweak</option></select>
+        <option value="9">Tweak</option>
       </select>
     </div>
   </div>
-
   <div class="form-group">
     <label class="control-label col-md-2 col-sm-2 col-xs-12" for="title">Title <span class="required">*</span>
     </label>
@@ -32,7 +31,6 @@
     <label class="control-label col-md-2 col-sm-2 col-xs-12" for="description">Description <span class="required">*</span>
     </label>
     <div class="col-md-9 col-sm-9 col-xs-12">
-      <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_content">
           <div id="alerts"></div>
           <div class="btn-toolbar editor" data-role="editor-toolbar" data-target="#editor">
@@ -101,14 +99,86 @@
           <span class="help-desk" style="color: #E74C3C;">Required</span>
           <br />
         </div>
-      </div>
     </div>
   </div>
-
   <div class="form-group">
-    <label class="control-label col-md-3 col-sm-3 col-xs-12">Add users to Task</label>
-    <div class="col-md-9 col-sm-9 col-xs-12">
-      <select class="select2_multiple form-control" multiple="multiple" name="users" required ngModel>
+    <label class="control-label col-md-2 col-sm-2 col-xs-12"> Status <span class="required">*</span> </label>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <select class="form-control">
+        <option selected="selected" value="1">New</option>
+        <option value="2">Assigned</option>
+        <option value="8">In Progress</option>
+        <option value="3">Resolved</option>
+        <option value="4">Approved</option>
+        <option value="5">Closed</option>
+        <option value="6">Rejected</option>
+        <option value="7">Blocked</option>
+      </select>
+      <span class="help-desk" style="color: #E74C3C;">Required</span>
+    </div>
+    <label class="control-label col-md-1 col-sm-1 col-xs-12"> Priority <span class="required">*</span></label>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <select class="form-control">
+        <option value="3">Low</option>
+        <option selected="selected" value="4">Normal</option>
+        <option value="5">High</option>
+        <option value="6">Urgent</option>
+        <option value="7">Immediate</option>
+      </select>
+      <span class="help-desk" style="color: #E74C3C;">Required</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-md-2 col-sm-2 col-xs-12">Start Date <span class="required">*</span>
+    </label>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <input id="start_date" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
+      <span class="help-desk" style="color: #E74C3C;">Required</span>
+    </div>
+    <label class="control-label col-md-1 col-sm-1 col-xs-12">End Date <span class="required">*</span></label>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <input id="end_date" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
+      <span class="help-desk" style="color: #E74C3C;">Required</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-md-2 col-sm-2 col-xs-12"> Assignee </label>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <input type="text" name="assignee" id="assignee" class="form-control col-md-10" style="float: left;" />
+      <div id="autocomplete-assignee" style="position: relative; float: left; width: 400px; margin: 10px;"></div>
+    </div>
+    <label class="control-label col-md-1 col-sm-1 col-xs-12"> Parent</label>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <input type="text" name="country" id="parent" class="form-control col-md-10" style="float: left;" />
+      <div id="autocomplete-parent" style="position: relative; float: left; width: 400px; margin: 10px;"></div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-md-2 col-sm-2 col-xs-12"> Estimate hours </label>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <input type="text" name="estimate_hour" id="estimate_hour" class="form-control col-md-10" style="float: left;" />
+    </div>
+    <label class="control-label col-md-1 col-sm-1 col-xs-12"> %Done</label>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <select class="form-control">
+        <option selected="selected" value="0">0%</option>
+        <option value="1">10%</option>
+        <option value="2">20%</option>
+        <option value="3">30%</option>
+        <option value="4">40%</option>
+        <option value="5">50%</option>
+        <option value="6">60%</option>
+        <option value="7">70%</option>
+        <option value="8">80%</option>
+        <option value="9">90%</option>
+        <option value="9">100%</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-md-2 col-sm-2 col-xs-12">Add Watcher</label>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <select class="select2_multiple select2_multiple_watcher form-control" multiple="multiple" name="watcher" data-placeholder="Select Watcher">
         <option>Choose option</option>
         <option>Ali</option>
         <option>Hamza Billal</option>
@@ -116,7 +186,6 @@
         <option>Hamza</option>
         <option>Fazal</option>
       </select>
-      <span class="help-desk" style="color: #E74C3C;">Required</span>
     </div>
   </div>
   <!--<div class="form-group">

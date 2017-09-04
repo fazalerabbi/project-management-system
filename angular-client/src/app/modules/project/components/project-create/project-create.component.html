@@ -4,18 +4,17 @@
 <form  class="form-horizontal form-label-left" #form="ngForm" (ngSubmit)="onSubmit()">
 
   <div class="form-group">
-    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name <span class="required">*</span>
+    <label class="control-label col-md-2 col-sm-2 col-xs-12" for="name">Name <span class="required">*</span>
     </label>
-    <div class="col-md-9 col-sm-9 col-xs-12">
+    <div class="col-md-4 col-sm-4 col-xs-12">
       <input type="text" id="name" name="name" class="form-control col-md-7 col-xs-12" required ngModel>
       <span class="help-desk" style="color: #E74C3C;">Required</span>
     </div>
   </div>
   <div class="form-group">
-    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="description">Description <span class="required">*</span>
+    <label class="control-label col-md-2 col-sm-2 col-xs-12" for="description">Description <span class="required">*</span>
     </label>
     <div class="col-md-9 col-sm-9 col-xs-12">
-      <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="x_content">
             <div id="alerts"></div>
             <div class="btn-toolbar editor" data-role="editor-toolbar" data-target="#editor">
@@ -84,14 +83,13 @@
             <span class="help-desk" style="color: #E74C3C;">Required</span>
             <br />
           </div>
-      </div>
     </div>
   </div>
 
   <div class="form-group">
-    <label class="control-label col-md-3 col-sm-3 col-xs-12">Add users to project</label>
-    <div class="col-md-9 col-sm-9 col-xs-12">
-      <select class="select2_multiple form-control" multiple="multiple" name="users" required ngModel>
+    <label class="control-label col-md-2 col-sm-2 col-xs-12">Add users to project</label>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <select class="select2_multiple form-control" multiple="multiple" name="users" data-placeholder="Select Users" required ngModel>
         <option>Choose option</option>
         <option>Ali</option>
         <option>Hamza Billal</option>
@@ -100,6 +98,13 @@
         <option>Fazal</option>
       </select>
       <span class="help-desk" style="color: #E74C3C;">Required</span>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" class="flat" />Assign to me
+        </label>
+      </div>
     </div>
   </div>
   <!--<div class="form-group">
