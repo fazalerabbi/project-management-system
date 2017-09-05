@@ -1,9 +1,9 @@
-<form  class="form-horizontal form-label-left" (ngSubmit)="onSubmit()">
+<form  class="form-horizontal form-label-left" (ngSubmit)="onSubmit()" [formGroup]="taskForm">
   <span class="section">Create Task</span>
   <div class="form-group">
     <label class="control-label col-md-2 col-sm-2 col-xs-12">Tracker <span class="required">*</span></label>
     <div class="col-md-5 col-sm-5 col-xs-12">
-      <select class="form-control" [(ngModel)]="task.tracker" name="tracker">
+      <select class="form-control" name="tracker" [formControlName]="'tracker'">
         <option selected="selected" value="4">Task</option>
         <option value="2">Feature</option>
         <option value="1">Bug</option>
@@ -14,27 +14,27 @@
         <option value="8">Step</option>
         <option value="9">Tweak</option>
       </select>
-      <span class="help-desk" style="color: #E74C3C;">Required</span>
+      <span class="help-desk" style="color: #E74C3C;" *ngIf="!taskForm.get('tracker').valid && taskForm.get('tracker').touched">Please select tracker.</span>
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-md-2 col-sm-2 col-xs-12">Project <span class="required">*</span></label>
     <div class="col-md-5 col-sm-5 col-xs-12">
-      <select class="form-control">
+      <select class="form-control" [formControlName]="'project_id'" name="project_id">
         <option selected="selected" value="0">Select Project</option>
         <option value="1">Project 1</option>
         <option value="2">Project 2</option>
         <option value="3">Project 3</option>
       </select>
-      <span class="help-desk" style="color: #E74C3C;">Required</span>
+      <span class="help-desk" style="color: #E74C3C;" *ngIf="!taskForm.get('project_id').valid && taskForm.get('project_id').touched">Please select project.</span>
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-md-2 col-sm-2 col-xs-12" for="title">Title <span class="required">*</span>
     </label>
     <div class="col-md-9 col-sm-9 col-xs-12">
-      <input type="text" id="title" name="title" class="form-control col-md-7 col-xs-12" [(ngModel)]="task.title">
-      <span class="help-desk" style="color: #E74C3C;">Required</span>
+      <input type="text" id="title" name="title" class="form-control col-md-7 col-xs-12" [formControlName]="'title'">
+      <span class="help-desk" style="color: #E74C3C;" *ngIf="!taskForm.get('title').valid && taskForm.get('title').touched">Please enter title of your task</span>
     </div>
   </div>
   <div class="form-group">
@@ -105,8 +105,8 @@
           </div>
         </div>
         <div id="editor"></div>
-        <textarea name="description" id="description" style="display:none;" ></textarea>
-        <span class="help-desk" style="color: #E74C3C;">Required</span>
+        <textarea name="description" id="description" style="display:none;" [formControlName]="'description'" ></textarea>
+        <span class="help-desk" style="color: #E74C3C;" *ngIf="!taskForm.get('description').valid && taskForm.get('description').touched">Please enter description.</span>
         <br />
       </div>
     </div>
@@ -124,7 +124,7 @@
         <option value="6">Rejected</option>
         <option value="7">Blocked</option>
       </select>
-      <span class="help-desk" style="color: #E74C3C;">Required</span>
+      <span class="help-desk" style="color: #E74C3C;" *ngIf="!taskForm.get('status').valid && taskForm.get('status').touched">Please select the status.</span>
     </div>
     <label class="control-label col-md-1 col-sm-1 col-xs-12"> Priority <span class="required">*</span></label>
     <div class="col-md-4 col-sm-4 col-xs-12">
@@ -135,42 +135,42 @@
         <option value="6">Urgent</option>
         <option value="7">Immediate</option>
       </select>
-      <span class="help-desk" style="color: #E74C3C;">Required</span>
+      <span class="help-desk" style="color: #E74C3C;" *ngIf="!taskForm.get('priority').valid && taskForm.get('priority').touched">Please select the priority.</span>
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-md-2 col-sm-2 col-xs-12">Start Date <span class="required">*</span>
     </label>
     <div class="col-md-4 col-sm-4 col-xs-12">
-      <input id="start_date" class="date-picker form-control col-md-7 col-xs-12" r type="text">
-      <span class="help-desk" style="color: #E74C3C;">Required</span>
+      <input id="start_date" class="date-picker form-control col-md-7 col-xs-12" type="text" [formControlName]="'start_date'">
+      <span class="help-desk" style="color: #E74C3C;" *ngIf="!taskForm.get('start_date').valid && taskForm.get('start_date').touched">Please enter start date.</span>
     </div>
     <label class="control-label col-md-1 col-sm-1 col-xs-12">End Date <span class="required">*</span></label>
     <div class="col-md-4 col-sm-4 col-xs-12">
-      <input id="end_date" class="date-picker form-control col-md-7 col-xs-12" type="text">
-      <span class="help-desk" style="color: #E74C3C;">Required</span>
+      <input id="end_date" class="date-picker form-control col-md-7 col-xs-12" type="text" [formControlName]="'end_date'">
+      <span class="help-desk" style="color: #E74C3C;" *ngIf="!taskForm.get('end_date').valid && taskForm.get('end_date').touched">Please enter end date.</span>
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-md-2 col-sm-2 col-xs-12"> Assignee </label>
     <div class="col-md-4 col-sm-4 col-xs-12">
-      <input type="text" name="assignee" id="assignee" class="form-control col-md-10" style="float: left;" />
-      <div id="autocomplete-assignee" style="position: relative; float: left; width: 400px; margin: 10px;"></div>
+      <input type="text" name="assignee" id="assignee" class="form-control col-md-10" style="float: left;" [formControlName]="'assignee'"/>
+      <div id="autocomplete-assignee" style="position: relative; float: left; width: 400px; margin: 10px;" ></div>
     </div>
     <label class="control-label col-md-1 col-sm-1 col-xs-12"> Parent</label>
     <div class="col-md-4 col-sm-4 col-xs-12">
-      <input type="text" name="country" id="parent" class="form-control col-md-10" style="float: left;" />
-      <div id="autocomplete-parent" style="position: relative; float: left; width: 400px; margin: 10px;"></div>
+      <input type="text" name="country" id="parent" class="form-control col-md-10" style="float: left;" [formControlName]="'parent_id'"/>
+      <div id="autocomplete-parent" style="position: relative; float: left; width: 400px; margin: 10px;" ></div>
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-md-2 col-sm-2 col-xs-12"> Estimate hours </label>
     <div class="col-md-4 col-sm-4 col-xs-12">
-      <input type="text" name="estimate_hour" id="estimate_hour" class="form-control col-md-10" style="float: left;" />
+      <input type="text" name="estimate_hour" id="estimate_hour" class="form-control col-md-10" style="float: left;" [formControlName]="'estimate_hour'"/>
     </div>
     <label class="control-label col-md-1 col-sm-1 col-xs-12"> %Done</label>
     <div class="col-md-4 col-sm-4 col-xs-12">
-      <select class="form-control">
+      <select class="form-control" name="percent_done" [formControlName]="'percent_done'">
         <option selected="selected" value="0">0%</option>
         <option value="1">10%</option>
         <option value="2">20%</option>
@@ -188,7 +188,7 @@
   <div class="form-group">
     <label class="control-label col-md-2 col-sm-2 col-xs-12">Add Watcher</label>
     <div class="col-md-4 col-sm-4 col-xs-12">
-      <select class="select2_multiple select2_multiple_watcher form-control" multiple="multiple" name="watcher" data-placeholder="Select Watcher">
+      <select class="select2_multiple select2_multiple_watcher form-control" multiple="multiple" name="watcher" data-placeholder="Select Watcher" [formControlName]="'watchers'">
         <option>Choose option</option>
         <option>Ali</option>
         <option>Hamza Billal</option>

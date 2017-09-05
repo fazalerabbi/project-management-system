@@ -5,16 +5,16 @@
     <h3>General</h3>
     <ul class="nav side-menu">
       <li>
-        <a routerLink="/my/dashboard"><i class="fa fa-dashboard"></i> Dashboard </a>
+        <a routerLink="my/dashboard"><i class="fa fa-dashboard"></i> Dashboard </a>
       </li>
       <li>
         <a ><i class="fa fa-briefcase"></i> Projects <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu" style="display: none;">
           <li>
-            <a routerLink="my/projects">My Projects</a>
+            <a [routerLink]="['/my/projects']">My Projects</a>
           </li>
           <li>
-            <a routerLink="my/projects/create">Create Project</a>
+            <a [routerLink]="['/my/projects/create']">Create Project</a>
           </li>
         </ul>
       </li>
@@ -22,10 +22,10 @@
         <a ><i class="fa fa-tasks"></i> Tasks <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu" style="display: none;">
           <li>
-            <a routerLink="my/tasks">My Tasks</a>
+            <a routerLink="/my/tasks">My Tasks</a>
           </li>
           <li>
-            <a routerLink="my/tasks/create">Create Task</a>
+            <a routerLink="/my/tasks/create">Create Task</a>
           </li>
         </ul>
       </li>

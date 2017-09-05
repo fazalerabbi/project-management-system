@@ -12,7 +12,7 @@ import { FormComponent } from './components/form/form.component';
     ProjectComponent,
     ProjectCreateComponent,
     ProjectEditComponent,
-    FormComponent,
+    FormComponent
   ],
   imports: [
     FormsModule,
