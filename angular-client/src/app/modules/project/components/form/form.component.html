@@ -77,7 +77,7 @@
           </div>
         </div>
         <div id="editor"></div>
-        <textarea name="description" id="description" style="display:none;" required [(ngModel)]="project.description"></textarea>
+        <textarea name="description" id="description" style="display:none;" [(ngModel)]="project.description"></textarea>
         <span class="help-desk" style="color: #E74C3C;">Required</span>
         <br />
       </div>
@@ -87,7 +87,7 @@
   <div class="form-group">
     <label class="control-label col-md-2 col-sm-2 col-xs-12">Add users to project</label>
     <div class="col-md-6 col-sm-6 col-xs-12">
-      <select class="select2_multiple form-control" multiple="multiple" name="users" data-placeholder="Select Users" required [(ngModel)]="project.users">
+      <select class="select2_multiple form-control" multiple="multiple" name="users" data-placeholder="Select Users" [(ngModel)]="project.users">
         <option>Choose option</option>
         <option>Ali</option>
         <option>Hamza Billal</option>

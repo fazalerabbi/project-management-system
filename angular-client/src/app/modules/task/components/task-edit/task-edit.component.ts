@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TaskEditComponent implements OnInit {
 
   task = {
+    id: 1,
     tracker: '2',
     project: '1',
     title: 'My new task',

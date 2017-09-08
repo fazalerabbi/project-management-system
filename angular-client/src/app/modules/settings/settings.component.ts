@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from "@angular/forms";
+import { NgForm } from '@angular/forms';
+import { SettingsService } from './services/settings.service';
 
 @Component({
   selector: 'app-settings',
@@ -9,13 +10,22 @@ import { NgForm } from "@angular/forms";
 export class SettingsComponent implements OnInit {
   @ViewChild('form') settingsForm: NgForm;
 
-  constructor() { }
+  constructor(private service: SettingsService) { }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    console.log(this.settingsForm);
+    if ( this.settingsForm.valid ) {
+      this.service.updateSettings(this.settingsForm.value)
+        .subscribe(
+          (response) => {
+            console.log(response);
+          }
+        );
+    } else {
+      console.log('Form is not valid', this.settingsForm);
+    }
   }
 
 }

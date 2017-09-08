@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectEditComponent implements OnInit {
   project = {
+    id: 1,
     name: 'My Project',
     description: 'My Project description',
     users: [

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { SettingsComponent } from './settings.component';
 import { SettingsRoutingModule } from './settings.routing.module';
 import { FormsModule } from '@angular/forms';
+import { SettingsService } from './services/settings.service';
 
 @NgModule({
   declarations: [
@@ -10,6 +11,9 @@ import { FormsModule } from '@angular/forms';
   imports: [
     FormsModule,
     SettingsRoutingModule
+  ],
+  providers: [
+    SettingsService
   ]
 })
 

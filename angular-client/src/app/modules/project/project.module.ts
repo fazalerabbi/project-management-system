@@ -6,6 +6,7 @@ import { ProjectComponent } from './components/project.component';
 import { ProjectRoutingModule } from './project.routing.module';
 import { FormsModule } from "@angular/forms";
 import { FormComponent } from './components/form/form.component';
+import { ProjectService } from './services/project.service';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,9 @@ import { FormComponent } from './components/form/form.component';
     FormsModule,
     ProjectRoutingModule
   ],
+  providers: [
+    ProjectService
+  ]
 })
 
 export class ProjectModule { }

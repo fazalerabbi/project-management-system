@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskCreateComponent implements OnInit {
 
-  task: {
+  task = {
     tracker: '',
     project: '',
     title: '',

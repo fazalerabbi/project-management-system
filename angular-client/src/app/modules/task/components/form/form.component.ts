@@ -1,6 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
+import { TaskService } from '../../services/task.service';
+import {Response} from "@angular/http";
+
+
 @Component({
   selector: 'app-task-form',
   templateUrl: './form.component.html',
@@ -9,27 +13,36 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class FormComponent implements OnInit {
   @Input() task;
   taskForm: FormGroup;
-  constructor() { }
+  constructor(private service: TaskService) { }
 
   ngOnInit() {
     this.taskForm = new FormGroup({
-      'tracker': new FormControl(null, Validators.required),
-      'project_id': new FormControl(null, Validators.required),
-      'title': new FormControl(null, Validators.required),
-      'description': new FormControl(null, Validators.required),
-      'status': new FormControl(null, Validators.required),
-      'priority': new FormControl(null, Validators.required),
-      'start_date': new FormControl(null, Validators.required),
-      'end_date': new FormControl(null, Validators.required),
-      'assignee': new FormControl(null, Validators.required),
-      'parent_id': new FormControl(null, Validators.required),
-      'estimate_hour': new FormControl(null, Validators.required),
-      'percent_done': new FormControl(null, Validators.required),
-      'watchers': new FormControl(null, Validators.required)
+      'tracker': new FormControl(null),
+      'project_id': new FormControl(null),
+      'title': new FormControl(null),
+      'description': new FormControl(null),
+      'status': new FormControl(null),
+      'priority': new FormControl(null),
+      'start_date': new FormControl(null),
+      'end_date': new FormControl(null),
+      'assignee': new FormControl(null),
+      'parent_id': new FormControl(null),
+      'estimate_hour': new FormControl(null),
+      'percent_done': new FormControl(null),
+      'watchers': new FormControl(null)
     });
   }
   onSubmit() {
-    console.log(this.taskForm);
+    if (this.taskForm.valid) {
+      this.service.cuTask(this.task)
+        .subscribe(
+          (response: Response) => {
+            console.log(response);
+          }
+        );
+    } else {
+      console.log('FOrm is not valid', this.taskForm);
+    }
   }
 
 }

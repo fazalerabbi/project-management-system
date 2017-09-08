@@ -11,6 +11,7 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { SideBarComponent } from './side-bar.component';
 import { TaskModule } from './modules/task/task.module';
 import { SettingsModule } from './modules/settings/settings.module';
+import { AuthService } from './modules/auth/services/auth.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { SettingsModule } from './modules/settings/settings.module';
     SettingsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ AuthService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
