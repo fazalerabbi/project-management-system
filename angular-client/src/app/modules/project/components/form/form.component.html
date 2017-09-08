@@ -6,7 +6,7 @@
     </label>
     <div class="col-md-6 col-sm-6 col-xs-12">
       <input type="text" id="name" name="name" class="form-control col-md-7 col-xs-12" required [(ngModel)]="project.name">
-      <span class="help-desk" style="color: #E74C3C;">Required</span>
+      <span class="help-desk" style="color: #E74C3C;" *ngIf="projectCreateForm.invalid && projectCreateForm.touched">Please enter project name.</span>
     </div>
   </div>
   <div class="form-group">
@@ -95,7 +95,7 @@
         <option>Hamza</option>
         <option>Fazal</option>
       </select>
-      <span class="help-desk" style="color: #E74C3C;">Required</span>
+      <span class="help-desk" style="color: #E74C3C;" *ngIf="projectCreateForm.invalid && projectCreateForm.touched">Required</span>
     </div>
   </div>
   <!--<div class="form-group">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Task } from '../../model/task';
 
 @Component({
   selector: 'app-task-create',
@@ -7,24 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskCreateComponent implements OnInit {
 
-  task = {
-    tracker: '',
-    project: '',
-    title: '',
-    description: '',
-    status: '',
-    priority: '',
-    start_date: '',
-    end_date: '',
-    assignee: '',
-    parent: '',
-    estimate: '',
-    percent_done: '',
-    watchers: [{}]
-  };
+  private task: Task;
   constructor() { }
 
   ngOnInit() {
+    this.task =  {
+      id: null,
+      tracker: '',
+      project_id: '',
+      title: '',
+      description: '',
+      status: '',
+      priority: '',
+      start_date: '',
+      end_date: '',
+      assignee: '',
+      parent_id: '',
+      estimate_hour: '',
+      percent_done: '',
+      watchers: []
+    };
   }
 
 }

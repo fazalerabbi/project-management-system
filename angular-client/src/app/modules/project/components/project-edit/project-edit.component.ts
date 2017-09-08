@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Project } from '../../model/project';
+
 
 @Component({
   selector: 'app-project-edit',
@@ -6,25 +8,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project-edit.component.css']
 })
 export class ProjectEditComponent implements OnInit {
-  project = {
-    id: 1,
-    name: 'My Project',
-    description: 'My Project description',
-    users: [
-      {
-        id: 1,
-        name: 'Fazal'
-      },
-      {
-        id: 2,
-        name: 'Ali'
-      },
-    ]
-  }
+  private project: Project;
 
-  constructor() { }
+  constructor() {  }
 
   ngOnInit() {
+    this.project = {
+      id: '1',
+      name: 'My Project 1',
+      description: 'My Project description',
+      users: [
+        {
+          id: '1',
+          name: 'Fazal',
+          email: 'fazal@gmail.com',
+          password: '213123123123'
+        },
+        {
+          id: '1',
+          name: 'Fazal',
+          email: 'fazal@gmail.com',
+          password: '213123123123'
+        },
+      ]
+    };
   }
 
 }

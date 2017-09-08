@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { ProjectCreateComponent } from './components/project-create/project-create.component';
 import { ProjectEditComponent } from './components/project-edit/project-edit.component';
@@ -17,6 +18,7 @@ import { ProjectService } from './services/project.service';
   ],
   imports: [
     FormsModule,
+    CommonModule,
     ProjectRoutingModule
   ],
   providers: [

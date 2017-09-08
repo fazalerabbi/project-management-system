@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 import 'rxjs/Rx';
 
 import { appConfig } from '../../../config/config';
+import { Project } from '../model/project';
 
 @Injectable()
 export class ProjectService {
@@ -17,8 +18,8 @@ export class ProjectService {
    * @param data
    * @returns {Observable<any>}
    */
-  cuProject(project) {
-    if (project.hasOwnProperty('id')) {
+  cuProject(project: Project) {
+    if (project.id !== null) {
       return this.updateProject(project);
     } else {
       return this.createProject(project);
@@ -30,7 +31,7 @@ export class ProjectService {
    * @param data
    * @returns {Observable<any>}
    */
-  createProject(project) {
+  createProject(project: Project) {
     console.log('Create', project);
     return this.http.post(this.apiURL, project)
       .map(
@@ -45,7 +46,7 @@ export class ProjectService {
    * @param data
    * @returns {Observable<any>}
    */
-  updateProject(project) {
+  updateProject(project: Project) {
     console.log('update', project);
     return this.http.put( this.apiURL, project )
       .map(

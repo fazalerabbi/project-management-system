@@ -13,6 +13,7 @@ import { TaskModule } from './modules/task/task.module';
 import { SettingsModule } from './modules/settings/settings.module';
 import { AuthService } from './modules/auth/services/auth.service';
 
+
 @NgModule({
   declarations: [
     SideBarComponent,
