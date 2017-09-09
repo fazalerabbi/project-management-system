@@ -3,6 +3,7 @@ import { SettingsComponent } from './settings.component';
 import { SettingsRoutingModule } from './settings.routing.module';
 import { FormsModule } from '@angular/forms';
 import { SettingsService } from './services/settings.service';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -10,6 +11,7 @@ import { SettingsService } from './services/settings.service';
   ],
   imports: [
     FormsModule,
+    CommonModule,
     SettingsRoutingModule
   ],
   providers: [

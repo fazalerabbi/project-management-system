@@ -1,6 +1,10 @@
 $(document).ready(function() {
   // [17, 74, 6, 39, 20, 85, 7]
   //[82, 23, 66, 9, 99, 6, 2]
+
+var dashboard = $("#dashboard-page");
+
+if(dashboard.length > 0) {
   var data1 = [
     [gd(2012, 1, 1), 17],
     [gd(2012, 1, 2), 74],
@@ -71,83 +75,82 @@ $(document).ready(function() {
   function gd(year, month, day) {
     return new Date(year, month - 1, day).getTime();
   }
-});
 
-$(function() {
-  $('#world-map-gdp').vectorMap({
-    map: 'world_mill_en',
-    backgroundColor: 'transparent',
-    zoomOnScroll: false,
-    series: {
-      regions: [{
-        values: gdpData,
-        scale: ['#E6F2F0', '#149B7E'],
-        normalizeFunction: 'polynomial'
-      }]
-    },
-    onRegionTipShow: function(e, el, code) {
-      el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
+  $(function() {
+    var element = $('#world-map-gdp');
+    if( element.length > 0 ) {
+      element.vectorMap({
+        map: 'world_mill_en',
+        backgroundColor: 'transparent',
+        zoomOnScroll: false,
+        series: {
+          regions: [{
+            values: gdpData,
+            scale: ['#E6F2F0', '#149B7E'],
+            normalizeFunction: 'polynomial'
+          }]
+        },
+        onRegionTipShow: function(e, el, code) {
+          el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
+        }
+      });
     }
   });
-});
-
-var icons = new Skycons({
-    "color": "#73879C"
-  }),
-  list = [
-    "clear-day", "clear-night", "partly-cloudy-day",
-    "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-    "fog"
-  ],
-  i;
-
-for (i = list.length; i--;)
-  icons.set(list[i], list[i]);
-
-icons.play();
-
-<!-- Dashboard LineChart -->
-Chart.defaults.global.legend = {
-  enabled: false
-};
-
-var data = {
-  labels: [
-    "Symbian",
-    "Blackberry",
-    "Other",
-    "Android",
-    "IOS"
-  ],
-  datasets: [{
-    data: [15, 20, 30, 10, 30],
-    backgroundColor: [
-      "#BDC3C7",
-      "#9B59B6",
-      "#455C73",
-      "#26B99A",
-      "#3498DB"
+  var icons = new Skycons({
+      "color": "#73879C"
+    }),
+    list = [
+      "clear-day", "clear-night", "partly-cloudy-day",
+      "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+      "fog"
     ],
-    hoverBackgroundColor: [
-      "#CFD4D8",
-      "#B370CF",
-      "#34495E",
-      "#36CAAB",
-      "#49A9EA"
-    ]
+    i;
 
-  }]
-};
+  for (i = list.length; i--;)
+    icons.set(list[i], list[i]);
 
-var canvasDoughnut = new Chart(document.getElementById("canvas1"), {
-  type: 'doughnut',
-  tooltipFillColor: "rgba(51, 51, 51, 0.55)",
-  data: data
-});
+  icons.play();
 
-<!-- End Dashboard -->
+  <!-- Dashboard LineChart -->
+  Chart.defaults.global.legend = {
+    enabled: false
+  };
 
-$(document).ready(function() {
+  var data = {
+    labels: [
+      "Symbian",
+      "Blackberry",
+      "Other",
+      "Android",
+      "IOS"
+    ],
+    datasets: [{
+      data: [15, 20, 30, 10, 30],
+      backgroundColor: [
+        "#BDC3C7",
+        "#9B59B6",
+        "#455C73",
+        "#26B99A",
+        "#3498DB"
+      ],
+      hoverBackgroundColor: [
+        "#CFD4D8",
+        "#B370CF",
+        "#34495E",
+        "#36CAAB",
+        "#49A9EA"
+      ]
+
+    }]
+  };
+
+  var canvasDoughnut = new Chart(document.getElementById("canvas1"), {
+    type: 'doughnut',
+    tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+    data: data
+  });
+
+
 
   var cb = function(start, end, label) {
     console.log(start.toISOString(), end.toISOString(), label);
@@ -216,63 +219,65 @@ $(document).ready(function() {
   $('#destroy').click(function() {
     $('#reportrange').data('daterangepicker').remove();
   });
-});
+  NProgress.done();
 
-NProgress.done();
-
-var icons = new Skycons({
-    "color": "#73879C"
-  }),
-  list = [
-    "clear-day", "clear-night", "partly-cloudy-day",
-    "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-    "fog"
-  ],
-  i;
-
-for (i = list.length; i--;)
-  icons.set(list[i], list[i]);
-
-icons.play();
-
-
-<!-- dashbord linegraph -->
-
-Chart.defaults.global.legend = {
-  enabled: false
-};
-
-var data = {
-  labels: [
-    "Symbian",
-    "Blackberry",
-    "Other",
-    "Android",
-    "IOS"
-  ],
-  datasets: [{
-    data: [15, 20, 30, 10, 30],
-    backgroundColor: [
-      "#BDC3C7",
-      "#9B59B6",
-      "#455C73",
-      "#26B99A",
-      "#3498DB"
+  var icons = new Skycons({
+      "color": "#73879C"
+    }),
+    list = [
+      "clear-day", "clear-night", "partly-cloudy-day",
+      "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+      "fog"
     ],
-    hoverBackgroundColor: [
-      "#CFD4D8",
-      "#B370CF",
-      "#34495E",
-      "#36CAAB",
-      "#49A9EA"
-    ]
+    i;
 
-  }]
-};
+  for (i = list.length; i--;)
+    icons.set(list[i], list[i]);
 
-var canvasDoughnut = new Chart(document.getElementById("canvas1"), {
-  type: 'doughnut',
-  tooltipFillColor: "rgba(51, 51, 51, 0.55)",
-  data: data
+  icons.play();
+
+
+  <!-- dashbord linegraph -->
+
+  Chart.defaults.global.legend = {
+    enabled: false
+  };
+
+  var data = {
+    labels: [
+      "Symbian",
+      "Blackberry",
+      "Other",
+      "Android",
+      "IOS"
+    ],
+    datasets: [{
+      data: [15, 20, 30, 10, 30],
+      backgroundColor: [
+        "#BDC3C7",
+        "#9B59B6",
+        "#455C73",
+        "#26B99A",
+        "#3498DB"
+      ],
+      hoverBackgroundColor: [
+        "#CFD4D8",
+        "#B370CF",
+        "#34495E",
+        "#36CAAB",
+        "#49A9EA"
+      ]
+
+    }]
+  };
+
+  var canvasDoughnut = new Chart(document.getElementById("canvas1"), {
+    type: 'doughnut',
+    tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+    data: data
+  });
+}
 });
+
+
 

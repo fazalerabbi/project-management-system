@@ -5,8 +5,8 @@
     <label class="control-label col-md-2 col-sm-2 col-xs-12" for="name">Name <span class="required">*</span>
     </label>
     <div class="col-md-6 col-sm-6 col-xs-12">
-      <input type="text" id="name" name="name" class="form-control col-md-7 col-xs-12" required [(ngModel)]="project.name">
-      <span class="help-desk" style="color: #E74C3C;" *ngIf="projectCreateForm.invalid && projectCreateForm.touched">Please enter project name.</span>
+      <input type="text" id="name" name="name" class="form-control col-md-7 col-xs-12" required [(ngModel)]="project.name" #projectName="ngModel">
+      <span class="help-desk" style="color: #E74C3C;" *ngIf="projectName.invalid && projectName.touched">Please enter project name.</span>
     </div>
   </div>
   <div class="form-group">
@@ -77,8 +77,8 @@
           </div>
         </div>
         <div id="editor"></div>
-        <textarea name="description" id="description" style="display:none;" [(ngModel)]="project.description"></textarea>
-        <span class="help-desk" style="color: #E74C3C;">Required</span>
+        <textarea name="description" id="description" style="display:none;" [(ngModel)]="project.description" #projectDesc="ngModel"></textarea>
+        <span class="help-desk" style="color: #E74C3C;" *ngIf="projectDesc.invalid && projectDesc.touched">Please enter description.</span>
         <br />
       </div>
     </div>
@@ -87,7 +87,7 @@
   <div class="form-group">
     <label class="control-label col-md-2 col-sm-2 col-xs-12">Add users to project</label>
     <div class="col-md-6 col-sm-6 col-xs-12">
-      <select class="select2_multiple form-control" multiple="multiple" name="users" data-placeholder="Select Users" [(ngModel)]="project.users">
+      <select class="select2_multiple form-control" multiple="multiple" name="users" data-placeholder="Select Users" [(ngModel)]="project.users" #projectUsers="ngModel">
         <option>Choose option</option>
         <option>Ali</option>
         <option>Hamza Billal</option>
@@ -95,7 +95,7 @@
         <option>Hamza</option>
         <option>Fazal</option>
       </select>
-      <span class="help-desk" style="color: #E74C3C;" *ngIf="projectCreateForm.invalid && projectCreateForm.touched">Required</span>
+      <span class="help-desk" style="color: #E74C3C;" *ngIf="projectUsers.invalid && projectUsers.touched">Please add users to project.</span>
     </div>
   </div>
   <!--<div class="form-group">
