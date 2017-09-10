@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+
 import { SettingsService } from './services/settings.service';
+
+declare const jQuery: any;
 
 @Component({
   selector: 'app-settings',
@@ -13,6 +16,10 @@ export class SettingsComponent implements OnInit {
   constructor(private service: SettingsService) { }
 
   ngOnInit() {
+    jQuery('input.flat').iCheck({
+      checkboxClass: 'icheckbox_flat-green',
+      radioClass: 'iradio_flat-green'
+    });
   }
 
   onSubmit() {

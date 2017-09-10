@@ -4,6 +4,9 @@ import { Response } from '@angular/http';
 
 import { TaskService } from '../../services/task.service';
 import { Task } from '../../model/task';
+import { JQueryEditor } from '../../../shared/jQueryHelpers/jQuery.editor';
+import {JQuerySelect2} from "../../../shared/jQueryHelpers/jQuery.select2";
+import {JQueryAutocomplete} from "../../../shared/jQueryHelpers/jQuery.autocomplete";
 
 
 @Component({
@@ -17,6 +20,20 @@ export class FormComponent implements OnInit {
   constructor(private service: TaskService) { }
 
   ngOnInit() {
+    const testArray = [
+      {
+        value: 'Pakistan',
+        data: 'pk',
+      },
+      {
+        value: 'China',
+        data: 'ch',
+      }
+    ];
+    JQueryEditor.init();
+    JQuerySelect2.init();
+    JQueryAutocomplete.parent(testArray);
+    JQueryAutocomplete.assignee(testArray);
     this.taskForm = new FormGroup({
       'tracker': new FormControl(this.task.tracker),
       'project_id': new FormControl(this.task.project_id),
@@ -33,6 +50,7 @@ export class FormComponent implements OnInit {
       'watchers': new FormControl(this.task.watchers)
     });
   }
+
   onSubmit() {
     if (this.taskForm.valid) {
       this.service.cuTask(this.task)
@@ -45,5 +63,6 @@ export class FormComponent implements OnInit {
       console.log('FOrm is not valid', this.taskForm);
     }
   }
+
 
 }

@@ -6,56 +6,36 @@
 
 /** ******  left menu  *********************** **/
 $(function () {
-    $('#sidebar-menu li ul').slideUp();
-    $('#sidebar-menu li').removeClass('active');
-
-    $('#sidebar-menu li').on('click', function() {
-        var link = $('a', this).attr('href');
-
-        if(link) {
-            window.location.href = link;
-        } else {
-            if ($(this).is('.active')) {
-                $(this).removeClass('active');
-                $('ul', this).slideUp();
-            } else {
-                $('#sidebar-menu li').removeClass('active');
-                $('#sidebar-menu li ul').slideUp();
-
-                $(this).addClass('active');
-                $('ul', this).slideDown();
-            }
-        }
-    });
-
-    $('#menu_toggle').click(function () {
-        if ($('body').hasClass('nav-md')) {
-            $('body').removeClass('nav-md').addClass('nav-sm');
-            $('.left_col').removeClass('scroll-view').removeAttr('style');
-            $('.sidebar-footer').hide();
-
-            if ($('#sidebar-menu li').hasClass('active')) {
-                $('#sidebar-menu li.active').addClass('active-sm').removeClass('active');
-            }
-        } else {
-            $('body').removeClass('nav-sm').addClass('nav-md');
-            $('.sidebar-footer').show();
-
-            if ($('#sidebar-menu li').hasClass('active-sm')) {
-                $('#sidebar-menu li.active-sm').addClass('active').removeClass('active-sm');
-            }
-        }
-    });
+  $('#sidebar-menu li').on('click', function() {
+    var link = $('a', this).attr('href');
+      if(link) {
+        selectActiveSideMenu();
+      } else {
+          if ($(this).is('.active')) {
+            $('div#sidebar-menu li').removeClass('active').removeClass('current-page');
+            selectActiveSideMenu();
+          } else {
+              $('div#sidebar-menu li').removeClass('active');
+              $('div#sidebar-menu li ul').slideUp();
+              $(this).addClass('active');
+              $('ul', this).slideDown();
+          }
+      }
+  });
 });
 
 /* Sidebar Menu active class */
 $(function () {
-    var url = window.location;
-    $('#sidebar-menu a[href="' + url + '"]').parent('li').addClass('current-page');
-    $('#sidebar-menu a').filter(function () {
-        return this.href == url;
-    }).parent('li').addClass('current-page').parent('ul').slideDown().parent().addClass('active');
+  selectActiveSideMenu();
 });
+
+function selectActiveSideMenu() {
+  var url = window.location;
+  $('#sidebar-menu a[href="' + url + '"]').parent('li').addClass('current-page');
+  $('div#sidebar-menu a').filter(function () {
+    return this.href == url;
+  }).parent('li').addClass('current-page').parent('ul').slideDown().parent().addClass('active');
+}
 
 /** ******  /left menu  *********************** **/
 /** ******  right_col height flexible  *********************** **/
@@ -247,6 +227,24 @@ $(document).ready(function () {
         radioClass: 'iradio_flat-green'
       });
   }
+  $('#menu_toggle').click(function () {
+    if ($('body').hasClass('nav-md')) {
+      $('body').removeClass('nav-md').addClass('nav-sm');
+      $('.left_col').removeClass('scroll-view').removeAttr('style');
+      $('.sidebar-footer').hide();
+
+      if ($('#sidebar-menu li').hasClass('active')) {
+        $('#sidebar-menu li.active').addClass('active-sm').removeClass('active');
+      }
+    } else {
+      $('body').removeClass('nav-sm').addClass('nav-md');
+      $('.sidebar-footer').show();
+
+      if ($('#sidebar-menu li').hasClass('active-sm')) {
+        $('#sidebar-menu li.active-sm').addClass('active').removeClass('active-sm');
+      }
+    }
+  });
 
 
 
@@ -412,7 +410,7 @@ if (typeof NProgress != 'undefined') {
 
 NProgress.done();
 
-$(function() {
+/*$(function() {
   'use strict';
   var countriesArray = $.map(countries, function(value, key) {
     return {
@@ -425,9 +423,9 @@ $(function() {
     lookup: countriesArray,
     appendTo: '#autocomplete-assignee'
   });
-});
+});*/
 
-$(function() {
+/*$(function() {
   'use strict';
   var countriesArray = $.map(countries, function(value, key) {
     return {
@@ -440,6 +438,6 @@ $(function() {
     lookup: countriesArray,
     appendTo: '#autocomplete-parent'
   });
-});
+});*/
 
 
