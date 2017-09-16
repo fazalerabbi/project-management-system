@@ -1,9 +1,9 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ProjectService } from '../../services/project.service';
 import { Project } from '../../model/project';
 import { JQueryEditor } from '../../../shared/jQueryHelpers/jQuery.editor';
-import { JQuerySelect2 } from "../../../shared/jQueryHelpers/jQuery.select2";
+import { JQuerySelect2 } from '../../../shared/jQueryHelpers/jQuery.select2';
 
 @Component({
   selector: 'app-project-form',
@@ -13,7 +13,6 @@ import { JQuerySelect2 } from "../../../shared/jQueryHelpers/jQuery.select2";
 export class FormComponent implements OnInit {
   @Input() project: Project;
   @ViewChild('form') projectCreateForm: NgForm;
-
   constructor(private service: ProjectService) { }
 
   ngOnInit() {

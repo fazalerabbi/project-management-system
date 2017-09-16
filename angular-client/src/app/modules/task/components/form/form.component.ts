@@ -5,8 +5,9 @@ import { Response } from '@angular/http';
 import { TaskService } from '../../services/task.service';
 import { Task } from '../../model/task';
 import { JQueryEditor } from '../../../shared/jQueryHelpers/jQuery.editor';
-import {JQuerySelect2} from "../../../shared/jQueryHelpers/jQuery.select2";
-import {JQueryAutocomplete} from "../../../shared/jQueryHelpers/jQuery.autocomplete";
+import { JQuerySelect2 } from '../../../shared/jQueryHelpers/jQuery.select2';
+import { JQueryAutocomplete } from '../../../shared/jQueryHelpers/jQuery.autocomplete';
+import { JQueryDatepicker } from '../../../shared/jQueryHelpers/jQuery.datepicker';
 
 
 @Component({
@@ -30,10 +31,13 @@ export class FormComponent implements OnInit {
         data: 'ch',
       }
     ];
+
     JQueryEditor.init();
     JQuerySelect2.init();
     JQueryAutocomplete.parent(testArray);
     JQueryAutocomplete.assignee(testArray);
+    JQueryDatepicker.init();
+
     this.taskForm = new FormGroup({
       'tracker': new FormControl(this.task.tracker),
       'project_id': new FormControl(this.task.project_id),

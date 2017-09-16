@@ -410,7 +410,7 @@ if (typeof NProgress != 'undefined') {
 
 NProgress.done();
 
-/*$(function() {
+$(function() {
   'use strict';
   var countriesArray = $.map(countries, function(value, key) {
     return {
@@ -423,9 +423,9 @@ NProgress.done();
     lookup: countriesArray,
     appendTo: '#autocomplete-assignee'
   });
-});*/
+});
 
-/*$(function() {
+$(function() {
   'use strict';
   var countriesArray = $.map(countries, function(value, key) {
     return {
@@ -438,6 +438,6 @@ NProgress.done();
     lookup: countriesArray,
     appendTo: '#autocomplete-parent'
   });
-});*/
+});
 
 

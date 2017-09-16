@@ -11,9 +11,9 @@ export class JQueryEditor {
   static showErrorAlert(reason, detail) {
     let msg = '';
     if (reason === 'unsupported-file-type') {
-      msg = "Unsupported format " + detail;
+      msg = 'Unsupported format ' + detail;
     } else {
-      console.log("error uploading file", reason, detail);
+      console.log('error uploading file', reason, detail);
     }
     jQuery('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>' +
       '<strong>File upload error</strong> ' + msg + ' </div>').prependTo('#alerts');
@@ -49,7 +49,7 @@ export class JQueryEditor {
       overlay.css('opacity', 0).css('position', 'absolute').offset(target.offset())
         .width(target.outerWidth()).height(target.outerHeight());
     });
-    if ("onwebkitspeechchange" in document.createElement("input")) {
+    if ('onwebkitspeechchange' in document.createElement('input')) {
       const editorOffset = jQuery('#editor').offset();
       jQuery('#voiceBtn').css('position', 'absolute').offset({
         top: editorOffset.top,

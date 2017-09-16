@@ -51,6 +51,7 @@
         "assets/js/skycons/skycons.min.js",
         "assets/js/select/select2.full.js",
         "assets/js/autocomplete/jquery.autocomplete.js",
+        "assets/js/autocomplete/countries.js",
         "assets/js/custom.js",
         "assets/js/dashboard.js"
       ],

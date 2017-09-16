@@ -60,14 +60,14 @@
       true,
       "check-open-brace",
       "check-catch",
-      "check-else",
-      "check-whitespace"
+      "check-else"
+      /*"check-whitespace"*/
     ],
     "prefer-const": true,
-   /* "quotemark": [
+    "quotemark": [
       true,
       "single"
-    ],*/
+    ],
     "radix": true,
     "semicolon": [
       "always"
