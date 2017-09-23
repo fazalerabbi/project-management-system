@@ -1,5 +1,4 @@
 const express    = require('express');
-const path       = require('path');
 const bodyParser = require('body-parser');
 const cors       = require('cors');
 const passport   = require('passport');
@@ -7,8 +6,9 @@ const mongoose   = require('mongoose');
 
 const app = express();
 
-//const userRoutes = require('./routes/users');
-const config     = require('./config/app.js');
+const config     = require('./config/app');
+const authRoutes = require('./routes/auth');
+const userRoutes = require('./routes/user');
 
 //connecting with mongo DB
 mongoose.connect(config.database);
@@ -31,31 +31,17 @@ app.use(cors());
 
 // Adding Body Parser Middle ware
 app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
+
+//Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./config/passport')(passport);
 
 // Adding user Routes
-
-//app.use('/auth', userRoutes);
-
-app.get('/auth/register', (req, res, next) => {
-    res.send('Register');
-});
-
-app.post('/auth/login', (req, res, next) => {
-    res.send('Login');
-});
-
-app.post('/auth/profile', (req, res, next) => {
-    res.send('Profile');
-});
-
-app.post('/auth/settings', (req, res, next) => {
-    res.send('Settings');
-});
-
-app.post('/auth/update-password', (req, res, next) => {
-    res.send('Password Update');
-});
+app.use('/auth', authRoutes);
+app.use('/my',passport.authenticate('jwt', {session: false}), userRoutes);
 
 // Start the express server
 app.listen(PORT, function(err) {
