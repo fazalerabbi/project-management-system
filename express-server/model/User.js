@@ -46,23 +46,50 @@ const userSchema = mongoose.Schema({
 
 const User = module.exports = mongoose.model('User', userSchema);
 
+/**
+ * get user by ID
+ * @param id
+ * @param callback
+ */
 module.exports.getUserById = function (id, callback) {
     User.findById(id, callback);
-};
-
-module.exports.getUserByEmail = function (email, callback) {
-    const query = {email: email};
-    User.findOne(query, callback);
-}
-module.exports.updateProfile = function (id, data, callback) {
-    User.findByIdAndUpdate(id, data, callback);
 }
 
+/**
+ * get user by username
+ * @param username
+ * @param callback
+ */
 module.exports.getUserByUserName = function (username, callback) {
     const query = {username: username};
     User.findOne(query, callback);
 }
 
+/**
+ * get user by email
+ * @param email
+ * @param callback
+ */
+module.exports.getUserByEmail = function (email, callback) {
+    const query = {email: email};
+    User.findOne(query, callback);
+}
+
+/**
+ * update user profile
+ * @param id
+ * @param data
+ * @param callback
+ */
+module.exports.updateProfile = function (id, data, callback) {
+    User.findByIdAndUpdate(id, data,{new: true}, callback);
+}
+
+/**
+ * register new user
+ * @param user
+ * @param callback
+ */
 module.exports.register = function (user, callback) {
     let userObj = new User(user);
     bcrypt.genSalt(10, (error, salt) => {
@@ -75,6 +102,11 @@ module.exports.register = function (user, callback) {
     });
 }
 
+/**
+ * login user
+ * @param user
+ * @param callback
+ */
 module.exports.login = function (user, callback) {
     const username = user.username;
     const password = user.password;
@@ -107,6 +139,12 @@ module.exports.login = function (user, callback) {
     });
 }
 
+/**
+ * compare password while login
+ * @param candidatePassword
+ * @param hash
+ * @param callback
+ */
 module.exports.comparePassword = function (candidatePassword, hash, callback) {
     bcrypt.compare(candidatePassword, hash, (error, isMatch) => {
         if (error) throw error;

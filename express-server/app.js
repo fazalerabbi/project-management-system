@@ -9,6 +9,7 @@ const app = express();
 const config     = require('./config/app');
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
+const projectRoutes = require('./routes/project');
 
 //connecting with mongo DB
 mongoose.connect(config.database);
@@ -42,6 +43,7 @@ require('./config/passport')(passport);
 // Adding user Routes
 app.use('/auth', authRoutes);
 app.use('/my',passport.authenticate('jwt', {session: false}), userRoutes);
+app.use('/my',passport.authenticate('jwt', {session: false}), projectRoutes);
 
 // Start the express server
 app.listen(PORT, function(err) {
