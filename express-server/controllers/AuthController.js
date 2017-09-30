@@ -7,7 +7,7 @@ AuthController.prototype.register = function (req, res, next) {
         if (error) {
             res.json({success: false, message: 'Registration Failed'});
         } else {
-            res.json({success:true, message: 'You are register successfuly.',user: user})
+            res.json({success:true, message: 'You are register successfuly.'})
         }
     });
 }

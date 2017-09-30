@@ -6,13 +6,20 @@
         <form #form="ngForm" (ngSubmit)="onSubmit()">
           <h1>Create Account</h1>
           <div>
-            <input type="text" class="form-control" placeholder="Username" name="user_name" required ngModel />
+            <input type="text" name="name" class="form-control" placeholder="Name" required [(ngModel)]="user.name" #userName="ngModel">
+            <span class="help-desk" *ngIf="userName.invalid && userName.touched" style="color: #E74C3C;" >Please enter your name.</span>
           </div>
           <div>
-            <input type="email" class="form-control" placeholder="Email" name="email" required ngModel />
+            <input type="email" class="form-control" placeholder="Email" name="email" required email [(ngModel)]="user.email" #userEmail="ngModel"/>
+            <span class="help-desk" *ngIf="userEmail.invalid && userEmail.touched" style="color: #E74C3C;" >Please enter your email.</span>
           </div>
           <div>
-            <input type="password" class="form-control" placeholder="Password" name="password" required ngModel/>
+            <input type="text" class="form-control" placeholder="User name" name="username" required [(ngModel)]="user.username" #userUsername="ngModel"/>
+            <span class="help-desk" *ngIf="userUsername.invalid && userUsername.touched" style="color: #E74C3C;" >Please enter username.</span>
+          </div>
+          <div>
+            <input type="password" class="form-control" placeholder="Password" name="password" required [(ngModel)]="user.password" #userPassword="ngModel"/>
+            <span class="help-desk" *ngIf="userPassword.invalid && userPassword.touched" style="color: #E74C3C;" >Please enter your password.</span>
           </div>
           <div>
             <button type="submit" class="btn btn-default submit" >Submit</button>

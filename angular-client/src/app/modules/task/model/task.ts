@@ -1,4 +1,4 @@
-import { User } from "../../users/model/user";
+import { User } from '../../users/model/user';
 
 export class Task {
   id: string;

@@ -1,5 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { FlashMessagesService } from 'angular2-flash-messages';
+
 import { ProfileService } from './services/profile.service';
 
 @Component({
@@ -11,9 +15,27 @@ export class ProfileComponent implements OnInit {
   @ViewChild('profileForm') updateProfileForm: NgForm;
   @ViewChild('updatePasswordForm') updatePasswordForm: NgForm;
 
-  constructor(private service: ProfileService) { }
+  constructor(private service: ProfileService,
+              private flashMessageService: FlashMessagesService,
+              private router: Router) { }
 
   ngOnInit() {
+    this.getProfile();
+  }
+
+  getProfile() {
+    this.service.getProfile()
+      .subscribe(
+        (response) => {
+          this.updateProfileForm.form.patchValue(response.user);
+        },
+        (error) => {
+          if(error.status === 401) {
+              this.flashMessageService.show('You are not authorized to access this page.', {cssClass: 'alert-success'});
+              this.router.navigate(['/auth/login']);
+            }
+          }
+        );
   }
 
   /**
@@ -24,11 +46,13 @@ export class ProfileComponent implements OnInit {
       this.service.updatePersonalInfo( this.updateProfileForm.value )
         .subscribe(
           (response) => {
-            console.log(response, this.updateProfileForm);
+            if(response.success) {
+              this.flashMessageService.show('Profile updated successfully', {cssClass: 'alert-success'});
+            }
           }
         );
     } else {
-      console.log('Form is not valid', this.updateProfileForm);
+      this.flashMessageService.show('Please fill required data.', {cssClass: 'alert-error'});
     }
   }
 

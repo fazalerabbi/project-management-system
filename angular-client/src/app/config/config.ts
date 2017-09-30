@@ -1,3 +1,3 @@
 export const appConfig = {
-  'httpURL': 'http://localhost:4200'
+  'httpURL': 'http://localhost:3000'
 }

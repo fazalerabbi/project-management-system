@@ -4,14 +4,14 @@ const Settings  = require('../model/Settings');
 let UserController = function () {}
 
 UserController.prototype.profile = function (req, res, next) {
-    const user = req.user;
-    User.getUserById(user._id, (error, user) => {
+    const userId = req.user;
+    User.getUserById(userId, (error, user) => {
         if(error) throw error;
 
         if(!user) {
-            res.json({success: false, message: 'No user found'});
+            res.json({status: 201, success: false, message: 'No user found'});
         } else {
-            res.json({success: true, user: user});
+            res.json({status: 200, success: true, user: user});
         }
     });
 }
@@ -23,7 +23,7 @@ UserController.prototype.updateProfile = function (req, res, next) {
     User.updateProfile(id, data, (error, user) => {
         if (error) throw error;
 
-        res.json({success: true, user: user});
+        res.json({status: 200, success: true, user: user});
     });
 }
 
@@ -34,7 +34,7 @@ UserController.prototype.settings = function (req, res, next) {
         if(error) throw error;
 
         if(settings) {
-            res.json({success: true, settings: settings});
+            res.json({status: 200, success: true, settings: settings});
         } else {
             settings = {
                 user_id: user_id,
@@ -43,7 +43,7 @@ UserController.prototype.settings = function (req, res, next) {
                 hide_email: false
             }
 
-            res.json({success: true, settings: settings });
+            res.json({status: 200, success: true, settings: settings });
         }
     });
 }
@@ -55,7 +55,7 @@ UserController.prototype.updateSettings = function (req, res, next) {
     Settings.updateSettings(user_id, data, (error, settings) => {
         if(error) throw error;
 
-        res.json({success: true, settings: settings});
+        res.json({status: 200, success: true, settings: settings});
     });
 }
 

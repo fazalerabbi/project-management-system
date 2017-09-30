@@ -7,7 +7,7 @@ router.get('/profile', (req, res, next) => {
     UserController.profile(req, res, next);
 });
 
-router.post('/profile', (req, res, next) => {
+router.put('/profile', (req, res, next) => {
     UserController.updateProfile(req, res, next);
 });
 
@@ -15,7 +15,7 @@ router.get('/settings', (req, res, next) => {
     UserController.settings(req, res, next);
 });
 
-router.post('/settings', (req, res, next) => {
+router.put('/settings', (req, res, next) => {
     UserController.updateSettings(req, res, next);
 });
 

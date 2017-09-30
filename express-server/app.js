@@ -10,6 +10,7 @@ const config     = require('./config/app');
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
 const projectRoutes = require('./routes/project');
+const taskRoutes = require('./routes/task');
 
 //connecting with mongo DB
 mongoose.connect(config.database);
@@ -44,6 +45,7 @@ require('./config/passport')(passport);
 app.use('/auth', authRoutes);
 app.use('/my',passport.authenticate('jwt', {session: false}), userRoutes);
 app.use('/my',passport.authenticate('jwt', {session: false}), projectRoutes);
+app.use('/my',passport.authenticate('jwt', {session: false}), taskRoutes);
 
 // Start the express server
 app.listen(PORT, function(err) {

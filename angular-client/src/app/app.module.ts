@@ -12,6 +12,7 @@ import { SideBarComponent } from './side-bar.component';
 import { TaskModule } from './modules/task/task.module';
 import { SettingsModule } from './modules/settings/settings.module';
 import { AuthService } from './modules/auth/services/auth.service';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { AuthService } from './modules/auth/services/auth.service';
   imports: [
     BrowserModule,
     HttpModule,
+    FlashMessagesModule,
 
     AuthModule,
     ProfileModule,

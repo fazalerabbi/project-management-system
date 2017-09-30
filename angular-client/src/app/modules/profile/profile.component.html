@@ -4,7 +4,7 @@
       <span class="section">Personal Info
       </span>
       <div class="form-group">
-        <label class="control-label col-md-3 col-sm-2 col-xs-12" for="name"> Name
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name"> Name
           <span class="required">*
           </span>
         </label>
@@ -20,7 +20,7 @@
           </span>
         </label>
         <div class="col-md-8 col-sm-10 col-xs-12">
-          <input type="text" id="user_name" name="user_name" class="form-control col-md-7 col-xs-12" disabled="disabled" #userName="ngModel" required ngModel />
+          <input type="text" id="username" name="username" class="form-control col-md-7 col-xs-12" disabled="disabled" #userName="ngModel" required ngModel />
           <span class="help-desk" style="color: #E74C3C;" *ngIf="!userName.valid && userName.touched">Please enter user name.
           </span>
         </div>
