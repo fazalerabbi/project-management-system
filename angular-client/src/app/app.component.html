@@ -27,7 +27,7 @@
         <!-- /menu prile quick info -->
         <br />
         <!-- sidebar menu -->
-        <app-side-bar></app-side-bar>
+        <app-side-bar *ngIf="authService.isLoggin()"></app-side-bar>
         <!-- /sidebar menu -->
       </div>
     </div>

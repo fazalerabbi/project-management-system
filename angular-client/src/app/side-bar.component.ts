@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from './modules/auth/services/auth.service';
+import { JQuerySidebar } from './modules/shared/jQueryHelpers/jQuery.sidebar';
 
 @Component({
   selector: 'app-side-bar',
@@ -8,15 +8,11 @@ import { AuthService } from './modules/auth/services/auth.service';
 })
 
 export class SideBarComponent implements OnInit {
-  constructor(private router: Router, private authService: AuthService) {
-    console.log('constructor');
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
-    /*
-    console.log('ngOnInit');
     JQuerySidebar.init();
-    */
   }
 
   navigate() {

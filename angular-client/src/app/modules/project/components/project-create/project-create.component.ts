@@ -7,21 +7,11 @@ import { Project } from '../../model/project';
   styleUrls: ['./project-create.component.css']
 })
 export class ProjectCreateComponent implements OnInit {
-  private project: Project;
-  constructor() { }
-
-  ngOnInit() {
-    this.project = {
-      id: null,
-      name: '',
-      description: '',
-      users: [
-      ]
-    };
+  private project: Project = new Project();
+  constructor() {
   }
 
-  onSubmit() {
-    console.log(this.project);
+  ngOnInit() {
   }
 
 }

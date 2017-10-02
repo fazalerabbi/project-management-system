@@ -9,8 +9,7 @@ const projectScheme = schema({
       required: true
     },
     description: {
-        type: String,
-        required: true
+        type: String
     },
     created_at: {
       type: Date,
@@ -57,7 +56,7 @@ module.exports.getOne = function (id, callback) {
 
 module.exports.create = function (userId, project, callback) {
     //console.log(project);
-    if(project.users.length > 0) {
+    if(project.users !== undefined && project.users.length > 0) {
         project.users.forEach((user, index) => {
             user._id = mongoose.Types.ObjectId(user._id);
         });
@@ -73,7 +72,7 @@ module.exports.create = function (userId, project, callback) {
 module.exports.update = function (id, project, callback) {
     if(project.users.length > 0) {
         project.users.forEach((user) => {
-            user._id = mongoose.Types.ObjectId(user._id);
+            user._id = mongoose.Types.ObjectId(user._id._id);
         });
     }
     Project.findByIdAndUpdate(id, project, {new: true}, callback);

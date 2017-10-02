@@ -57,6 +57,9 @@ export class FormComponent implements OnInit {
 
   onSubmit() {
     if (this.taskForm.valid) {
+      const taskId = this.task._id;
+      this.task = this.taskForm.value;
+      this.task._id = taskId;
       this.service.cuTask(this.task)
         .subscribe(
           (response: Response) => {

@@ -1,13 +1,34 @@
-import {Injectable} from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Injectable } from '@angular/core';
+import { Headers, Http, Response } from '@angular/http';
+
+import 'rxjs/Rx';
 
 import { appConfig } from '../../../config/config';
 import { Task } from '../model/task';
+import { AuthService } from '../../auth/services/auth.service';
 
 @Injectable()
 export class TaskService {
   private apiURL: string = appConfig.httpURL;
-  constructor(private http: Http) {
+  private headers: Headers = new Headers();
+  constructor(private http: Http,
+              private authService: AuthService) {
+    this.headers.append('Content-Type', 'application/json');
+    this.headers.append('Authorization', this.authService.getTokenFromLocalStorage());
+  }
+
+  getAll() {
+    return this.http.get(this.apiURL + '/my/tasks', {headers: this.headers})
+      .map((response: Response) => {
+          return response.json();
+      });
+  }
+
+  getOne(id) {
+    return this.http.get(this.apiURL + '/my/task/' + id, {headers: this.headers})
+        .map((response: Response)=> {
+            return response.json();
+        });
   }
 
   /**
@@ -16,7 +37,8 @@ export class TaskService {
    * @returns {Observable<any>}
    */
   cuTask(task: Task) {
-    if (task.id !== null) {
+    console.log(task._id);
+    if (task._id !== null && task._id !== undefined) {
       return this.updateTask(task);
     } else {
       return this.createTask(task);
@@ -29,8 +51,7 @@ export class TaskService {
    * @returns {Observable<any>}
    */
   updateTask(task: Task) {
-    console.log('update task');
-    return this.http.put(this.apiURL, task)
+    return this.http.put(this.apiURL + '/my/tasks/' +  task._id + '/edit', task, {headers: this.headers})
       .map(
         (response: Response) => {
           return response.json();
@@ -44,7 +65,6 @@ export class TaskService {
    * @returns {Observable<any>}
    */
   createTask(task: Task) {
-    console.log('create task');
     return this.http.post(this.apiURL, task)
       .map(
         (response: Response) => {

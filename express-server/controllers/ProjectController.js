@@ -22,7 +22,10 @@ ProjectController.prototype.create = function (req, res, next)  {
     const project = req.body;
     const user_id = req.user._id;
     Project.create(user_id, project, (error, project) => {
-        if(error) throw error;
+        if(error) {
+            console.log('Hello',error.message);
+            throw error;
+        };
 
         if(project) {
             res.json({status: 200, success: true, message: 'Project has been created successfuly', project: project});
@@ -38,7 +41,7 @@ ProjectController.prototype.update = function (req, res, next)  {
     Project.update(id, data, (error, project) => {
         if (error) throw error;
 
-        res.json({status: 200, success: true, project: project});
+        res.json({status: 200, success: true});
     });
 }
 

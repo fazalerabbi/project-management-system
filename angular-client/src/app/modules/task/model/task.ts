@@ -1,7 +1,7 @@
 import { User } from '../../users/model/user';
 
 export class Task {
-  id: string;
+  _id: string;
   tracker: string;
   project_id: string;
   title: string;

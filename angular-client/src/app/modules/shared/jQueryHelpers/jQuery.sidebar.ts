@@ -6,11 +6,11 @@ export class JQuerySidebar {
     jQuery('#sidebar-menu li').on('click', function() {
       const link = jQuery('a', this).attr('href');
       if(link) {
-        this.selectActiveSideMenu();
+        JQuerySidebar.selectActiveSideMenu();
       } else {
         if (jQuery(this).is('.active')) {
           jQuery('div#sidebar-menu li').removeClass('active').removeClass('current-page');
-          this.selectActiveSideMenu();
+          JQuerySidebar.selectActiveSideMenu();
         } else {
           jQuery('div#sidebar-menu li').removeClass('active');
           jQuery('div#sidebar-menu li ul').slideUp();

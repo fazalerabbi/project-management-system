@@ -20,7 +20,6 @@ export class AuthService {
       map(
       (response: Response) => {
         const res = response.json();
-        console.log(res);
         if (res.success) {
           this.setUserAndTokenToLocalStorage(res.token, res.user);
           return true;

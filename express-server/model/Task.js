@@ -5,7 +5,7 @@ const schema = mongoose.Schema;
 const taskSchema = schema({
     tracker: {
         type: Number,
-        required: true
+        //required: true
     },
     project_id: {
         type: schema.Types.ObjectId,
@@ -13,19 +13,19 @@ const taskSchema = schema({
     },
     title: {
         type: String,
-        required: true
+        //required: true
     },
     description: {
         type: String,
-        required: true
+        //required: true
     },
     status: {
         type: Number,
-        required: true
+        //required: true
     },
     priority: {
         type: Number,
-        required: true
+        //required: true
     },
     start_date: {
         type: Date
@@ -77,7 +77,7 @@ module.exports.getOne = function (id, callback) {
 }
 
 module.exports.getTasksByUserId = function (userId, callback) {
-    const query = { assignee: userId };
+    const query = { $or:[ {assignee:userId}, {created_by:userId} ]};
     Task.find(query, callback);
 }
 

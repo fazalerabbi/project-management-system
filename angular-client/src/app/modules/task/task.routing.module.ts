@@ -15,7 +15,7 @@ const taskRoutes: Routes = [
         path: 'create', component: TaskCreateComponent
       },
       {
-        path: 'edit', component: TaskEditComponent
+        path: ':id/edit', component: TaskEditComponent
       }
     ],
     canActivateChild: [AuthGuard]

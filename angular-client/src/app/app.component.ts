@@ -7,9 +7,7 @@ import { AuthService } from './modules/auth/services/auth.service';
 })
 export class AppComponent {
 
-  constructor(private authService: AuthService){
-
-  }
+  constructor(private authService: AuthService){ }
 
   onLogout() {
     this.authService.logOut();
