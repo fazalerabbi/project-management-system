@@ -13,7 +13,7 @@ export class TaskCreateComponent implements OnInit {
 
   ngOnInit() {
     this.task =  {
-      id: null,
+      _id: null,
       tracker: '',
       project_id: '',
       title: '',
