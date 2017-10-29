@@ -4,4 +4,6 @@ const getDashboardData = (dashboardData) => {
         payload: dashboardData
     }
 }
-export default getDashboardData;
+export default dashboard = {
+    getDashboardData
+};
