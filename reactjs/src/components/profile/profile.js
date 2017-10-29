@@ -11,7 +11,7 @@ class Profile extends React.Component {
                             <div className="title_left">
                             </div>
                         </div>
-                        <div class="clearfix"></div>
+                        <div className="clearfix"></div>
                     <div className="row">
                         {/*Update Profile*/}
                         <div className="col-md-6 col-sm-12 col-xs-12">

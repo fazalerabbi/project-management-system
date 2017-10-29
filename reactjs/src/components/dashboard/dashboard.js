@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
+import getDashboardData from "../../actions/dashboard.actions";
 import App from '../../App';
 
 class DashboardIndex extends Component {
+
+    componentDidMount() {
+        this.props.actions.dashboard();
+    }
+
     render() {
         let style1                = { background: "#fff", cursor: "pointer", padding: "5px 10px", border: "1px solid #ccc"};
         let styleWidth            = { width: "76%" };
@@ -709,4 +717,17 @@ class DashboardIndex extends Component {
     }
 }
 
-export default DashboardIndex;
+const mapStateToProps = (state) => {
+    return {
+        dashboard: state.dashboard
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        actions: bindActionCreators({dashboard: getDashboardData}, dispatch)
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(DashboardIndex);

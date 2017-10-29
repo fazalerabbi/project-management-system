@@ -8,55 +8,55 @@ class TasksListing extends React.Component {
         return (
             <App>
                 {/*<!-- page content -->*/}
-                <div class="right_col" role="main">
-                    <div class="">
-                        <div class="page-title">
-                            <div class="title_left">
+                <div className="right_col" role="main">
+                    <div className="">
+                        <div className="page-title">
+                            <div className="title_left">
                                 <h3>Tasks <small>Listing design</small></h3>
                             </div>
 
-                            <div class="title_right">
-                                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Search for..." />
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
+                            <div className="title_right">
+                                <div className="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                                    <div className="input-group">
+                                        <input type="text" className="form-control" placeholder="Search for..." />
+                    <span className="input-group-btn">
+                      <button className="btn btn-default" type="button">Go!</button>
                     </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="clearfix"></div>
+                        <div className="clearfix"></div>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="x_panel">
-                                    <div class="x_title">
+                        <div className="row">
+                            <div className="col-md-12">
+                                <div className="x_panel">
+                                    <div className="x_title">
                                         <h2>Tasks</h2>
-                                        <ul class="nav navbar-right panel_toolbox">
-                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        <ul className="nav navbar-right panel_toolbox">
+                                            <li><a className="collapse-link"><i className="fa fa-chevron-up"></i></a>
                                             </li>
-                                            <li class="dropdown">
-                                                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                                <ul class="dropdown-menu" role="menu">
+                                            <li className="dropdown">
+                                                <a href="" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i className="fa fa-wrench"></i></a>
+                                                <ul className="dropdown-menu" role="menu">
                                                     <li><a href="">Settings 1</a>
                                                     </li>
                                                     <li><a href="">Settings 2</a>
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                            <li><a className="close-link"><i className="fa fa-close"></i></a>
                                             </li>
                                         </ul>
-                                        <div class="clearfix"></div>
+                                        <div className="clearfix"></div>
                                     </div>
-                                    <div class="x_content">
+                                    <div className="x_content">
 
                                         <p>Simple table with project listing with progress and editing options</p>
 
                                         {/*<!-- start project list -->*/}
-                                        <table class="table table-striped Tasks">
+                                        <table className="table table-striped Tasks">
                                             <thead>
                                             <tr>
                                                 <th style={styleWidth1}>#</th>
@@ -76,34 +76,34 @@ class TasksListing extends React.Component {
                                                     <small>Created 01.01.2015</small>
                                                 </td>
                                                 <td>
-                                                    <ul class="list-inline">
+                                                    <ul className="list-inline">
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                     </ul>
                                                 </td>
-                                                <td class="project_progress">
-                                                    <div class="progress progress_sm">
-                                                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="57"></div>
+                                                <td className="project_progress">
+                                                    <div className="progress progress_sm">
+                                                        <div className="progress-bar bg-green" role="progressbar" data-transitiongoal="57"></div>
                                                     </div>
                                                     <small>57% Complete</small>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-success btn-xs">Success</button>
+                                                    <button type="button" className="btn btn-success btn-xs">Success</button>
                                                 </td>
                                                 <td>
-                                                    <a href="" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                                                    <a href="" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                                    <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                                    <a href="" className="btn btn-primary btn-xs"><i className="fa fa-folder"></i> View </a>
+                                                    <a href="" className="btn btn-info btn-xs"><i className="fa fa-pencil"></i> Edit </a>
+                                                    <a href="" className="btn btn-danger btn-xs"><i className="fa fa-trash-o"></i> Delete </a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -114,28 +114,28 @@ class TasksListing extends React.Component {
                                                     <small>Created 01.01.2015</small>
                                                 </td>
                                                 <td>
-                                                    <ul class="list-inline">
+                                                    <ul className="list-inline">
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                     </ul>
                                                 </td>
-                                                <td class="project_progress">
-                                                    <div class="progress progress_sm">
-                                                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="47"></div>
+                                                <td className="project_progress">
+                                                    <div className="progress progress_sm">
+                                                        <div className="progress-bar bg-green" role="progressbar" data-transitiongoal="47"></div>
                                                     </div>
                                                     <small>47% Complete</small>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-success btn-xs">Success</button>
+                                                    <button type="button" className="btn btn-success btn-xs">Success</button>
                                                 </td>
                                                 <td>
-                                                    <a href="" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                                                    <a href="" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                                    <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                                    <a href="" className="btn btn-primary btn-xs"><i className="fa fa-folder"></i> View </a>
+                                                    <a href="" className="btn btn-info btn-xs"><i className="fa fa-pencil"></i> Edit </a>
+                                                    <a href="" className="btn btn-danger btn-xs"><i className="fa fa-trash-o"></i> Delete </a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -146,31 +146,31 @@ class TasksListing extends React.Component {
                                                     <small>Created 01.01.2015</small>
                                                 </td>
                                                 <td>
-                                                    <ul class="list-inline">
+                                                    <ul className="list-inline">
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                     </ul>
                                                 </td>
-                                                <td class="project_progress">
-                                                    <div class="progress progress_sm">
-                                                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="77"></div>
+                                                <td className="project_progress">
+                                                    <div className="progress progress_sm">
+                                                        <div className="progress-bar bg-green" role="progressbar" data-transitiongoal="77"></div>
                                                     </div>
                                                     <small>77% Complete</small>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-success btn-xs">Success</button>
+                                                    <button type="button" className="btn btn-success btn-xs">Success</button>
                                                 </td>
                                                 <td>
-                                                    <a href="" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                                                    <a href="" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                                    <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                                    <a href="" className="btn btn-primary btn-xs"><i className="fa fa-folder"></i> View </a>
+                                                    <a href="" className="btn btn-info btn-xs"><i className="fa fa-pencil"></i> Edit </a>
+                                                    <a href="" className="btn btn-danger btn-xs"><i className="fa fa-trash-o"></i> Delete </a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -181,34 +181,34 @@ class TasksListing extends React.Component {
                                                     <small>Created 01.01.2015</small>
                                                 </td>
                                                 <td>
-                                                    <ul class="list-inline">
+                                                    <ul className="list-inline">
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                     </ul>
                                                 </td>
-                                                <td class="project_progress">
-                                                    <div class="progress progress_sm">
-                                                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60"></div>
+                                                <td className="project_progress">
+                                                    <div className="progress progress_sm">
+                                                        <div className="progress-bar bg-green" role="progressbar" data-transitiongoal="60"></div>
                                                     </div>
                                                     <small>60% Complete</small>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-success btn-xs">Success</button>
+                                                    <button type="button" className="btn btn-success btn-xs">Success</button>
                                                 </td>
                                                 <td>
-                                                    <a href="" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                                                    <a href="" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                                    <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                                    <a href="" className="btn btn-primary btn-xs"><i className="fa fa-folder"></i> View </a>
+                                                    <a href="" className="btn btn-info btn-xs"><i className="fa fa-pencil"></i> Edit </a>
+                                                    <a href="" className="btn btn-danger btn-xs"><i className="fa fa-trash-o"></i> Delete </a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -219,31 +219,31 @@ class TasksListing extends React.Component {
                                                     <small>Created 01.01.2015</small>
                                                 </td>
                                                 <td>
-                                                    <ul class="list-inline">
+                                                    <ul className="list-inline">
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                     </ul>
                                                 </td>
-                                                <td class="project_progress">
-                                                    <div class="progress progress_sm">
-                                                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="12"></div>
+                                                <td className="project_progress">
+                                                    <div className="progress progress_sm">
+                                                        <div className="progress-bar bg-green" role="progressbar" data-transitiongoal="12"></div>
                                                     </div>
                                                     <small>12% Complete</small>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-success btn-xs">Success</button>
+                                                    <button type="button" className="btn btn-success btn-xs">Success</button>
                                                 </td>
                                                 <td>
-                                                    <a href="" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                                                    <a href="" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                                    <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                                    <a href="" className="btn btn-primary btn-xs"><i className="fa fa-folder"></i> View </a>
+                                                    <a href="" className="btn btn-info btn-xs"><i className="fa fa-pencil"></i> Edit </a>
+                                                    <a href="" className="btn btn-danger btn-xs"><i className="fa fa-trash-o"></i> Delete </a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -254,34 +254,34 @@ class TasksListing extends React.Component {
                                                     <small>Created 01.01.2015</small>
                                                 </td>
                                                 <td>
-                                                    <ul class="list-inline">
+                                                    <ul className="list-inline">
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                     </ul>
                                                 </td>
-                                                <td class="project_progress">
-                                                    <div class="progress progress_sm">
-                                                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="35"></div>
+                                                <td className="project_progress">
+                                                    <div className="progress progress_sm">
+                                                        <div className="progress-bar bg-green" role="progressbar" data-transitiongoal="35"></div>
                                                     </div>
                                                     <small>35% Complete</small>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-success btn-xs">Success</button>
+                                                    <button type="button" className="btn btn-success btn-xs">Success</button>
                                                 </td>
                                                 <td>
-                                                    <a href="" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                                                    <a href="" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                                    <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                                    <a href="" className="btn btn-primary btn-xs"><i className="fa fa-folder"></i> View </a>
+                                                    <a href="" className="btn btn-info btn-xs"><i className="fa fa-pencil"></i> Edit </a>
+                                                    <a href="" className="btn btn-danger btn-xs"><i className="fa fa-trash-o"></i> Delete </a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -292,28 +292,28 @@ class TasksListing extends React.Component {
                                                     <small>Created 01.01.2015</small>
                                                 </td>
                                                 <td>
-                                                    <ul class="list-inline">
+                                                    <ul className="list-inline">
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                     </ul>
                                                 </td>
-                                                <td class="project_progress">
-                                                    <div class="progress progress_sm">
-                                                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="87"></div>
+                                                <td className="project_progress">
+                                                    <div className="progress progress_sm">
+                                                        <div className="progress-bar bg-green" role="progressbar" data-transitiongoal="87"></div>
                                                     </div>
                                                     <small>87% Complete</small>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-success btn-xs">Success</button>
+                                                    <button type="button" className="btn btn-success btn-xs">Success</button>
                                                 </td>
                                                 <td>
-                                                    <a href="" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                                                    <a href="" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                                    <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                                    <a href="" className="btn btn-primary btn-xs"><i className="fa fa-folder"></i> View </a>
+                                                    <a href="" className="btn btn-info btn-xs"><i className="fa fa-pencil"></i> Edit </a>
+                                                    <a href="" className="btn btn-danger btn-xs"><i className="fa fa-trash-o"></i> Delete </a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -324,31 +324,31 @@ class TasksListing extends React.Component {
                                                     <small>Created 01.01.2015</small>
                                                 </td>
                                                 <td>
-                                                    <ul class="list-inline">
+                                                    <ul className="list-inline">
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                     </ul>
                                                 </td>
-                                                <td class="project_progress">
-                                                    <div class="progress progress_sm">
-                                                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="77"></div>
+                                                <td className="project_progress">
+                                                    <div className="progress progress_sm">
+                                                        <div className="progress-bar bg-green" role="progressbar" data-transitiongoal="77"></div>
                                                     </div>
                                                     <small>77% Complete</small>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-success btn-xs">Success</button>
+                                                    <button type="button" className="btn btn-success btn-xs">Success</button>
                                                 </td>
                                                 <td>
-                                                    <a href="" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                                                    <a href="" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                                    <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                                    <a href="" className="btn btn-primary btn-xs"><i className="fa fa-folder"></i> View </a>
+                                                    <a href="" className="btn btn-info btn-xs"><i className="fa fa-pencil"></i> Edit </a>
+                                                    <a href="" className="btn btn-danger btn-xs"><i className="fa fa-trash-o"></i> Delete </a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -359,34 +359,34 @@ class TasksListing extends React.Component {
                                                     <small>Created 01.01.2015</small>
                                                 </td>
                                                 <td>
-                                                    <ul class="list-inline">
+                                                    <ul className="list-inline">
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                         <li>
-                                                            <img src="/images/user.png" class="avatar" alt="Avatar" />
+                                                            <img src="/images/user.png" className="avatar" alt="Avatar" />
                                                         </li>
                                                     </ul>
                                                 </td>
-                                                <td class="project_progress">
-                                                    <div class="progress progress_sm">
-                                                        <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="77"></div>
+                                                <td className="project_progress">
+                                                    <div className="progress progress_sm">
+                                                        <div className="progress-bar bg-green" role="progressbar" data-transitiongoal="77"></div>
                                                     </div>
                                                     <small>77% Complete</small>
                                                 </td>
                                                 <td>
-                                                    <button type="button" class="btn btn-success btn-xs">Success</button>
+                                                    <button type="button" className="btn btn-success btn-xs">Success</button>
                                                 </td>
                                                 <td>
-                                                    <a href="" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                                                    <a href="" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                                    <a href="" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                                    <a href="" className="btn btn-primary btn-xs"><i className="fa fa-folder"></i> View </a>
+                                                    <a href="" className="btn btn-info btn-xs"><i className="fa fa-pencil"></i> Edit </a>
+                                                    <a href="" className="btn btn-danger btn-xs"><i className="fa fa-trash-o"></i> Delete </a>
                                                 </td>
                                             </tr>
                                             </tbody>

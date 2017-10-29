@@ -5,7 +5,7 @@ import App from '../../App';
 class Settings extends React.Component {
     render() {
         /*let styleColor          = {"color": "#E74C3C"};*/
-        let stylePaddingLeft    = {"padding-left": "0px"};
+        let stylePaddingLeft    = {"paddingLeft": "0px"};
         return (
             <App>
 
@@ -53,12 +53,12 @@ class Settings extends React.Component {
                                 </div>
                             </div>
                             <div className="item form-group">
-                                <label className="control-label col-md-3 col-sm-3 col-xs-12" for="hide_email">Hide my email address
+                                <label className="control-label col-md-3 col-sm-3 col-xs-12" htmlFor="hide_email">Hide my email address
                                 </label>
                                 <div className="col-md-9 col-sm-9 col-xs-12">
                                     <div className="checkbox">
                                         <label style={stylePaddingLeft}>
-                                            <input type="checkbox" className="flat" id="hide_email" name="hide_email" ngModel />
+                                            <input type="checkbox" className="flat" id="hide_email" name="hide_email"  />
                                         </label>
                                     </div>
                                 </div>
