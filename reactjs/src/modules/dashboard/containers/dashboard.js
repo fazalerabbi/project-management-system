@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import dashboard from "../../actions/dashboard.actions";
-import App from '../../App';
+import dashboardActions from '../../../actions/dashboard.actions';
+import App from '../../../App';
 
 class DashboardIndex extends Component {
 
     componentDidMount() {
-        this.props.actions.dashboard();
+        this.props.actions.getDashboardData();
     }
 
     render() {
@@ -725,7 +725,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        actions: bindActionCreators({...dashboard}, dispatch)
+        actions: bindActionCreators({...dashboardActions}, dispatch)
     }
 }
 

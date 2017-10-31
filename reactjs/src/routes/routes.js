@@ -1,18 +1,20 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import DashboardIndex from "../components/dashboard/dashboard";
-import Profile from "../components/profile/profile";
-import ProjectCrud from "../components/projects/project.create";
+import DashboardIndex from "../modules/dashboard/containers/dashboard";
+import Profile from "../modules/profile/containers/profile";
+import ProjectCrud from "../modules/projects/containers/project.create";
 import App from "../App";
-import ProjectsListing from "../components/projects/projects.listing";
-import TasksListing from "../components/tasks/tasks.listing";
-import TaskCrud from "../components/tasks/task.create";
-import Settings from "../components/settings/settings";
+import ProjectsListing from "../modules/projects/containers/projects.listing";
+import TasksListing from "../modules/tasks/containers/tasks.listing";
+import TaskCrud from "../modules/tasks/containers/task.create";
+import Settings from "../modules/settings/containers/settings";
 
 const Routes = () => {
     return (
         <BrowserRouter>
             <Switch>
+                <Route path="/auth/login" component={DashboardIndex}/>
+                <Route path="/auth/register" component={DashboardIndex}/>
                 <Route path="/dashboard" component={DashboardIndex}/>
                 <Route path="/my/profile" component={Profile}/>
                 <Route path="/my/settings" component={Settings}/>

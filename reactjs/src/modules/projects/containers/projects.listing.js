@@ -1,9 +1,9 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import projectActions from '../../actions/project.actions';
+import projectActions from '../../../actions/project.actions';
 
-import App from '../../App';
+import App from '../../../App';
 
 
 class ProjectsListing extends React.Component {

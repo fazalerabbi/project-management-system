@@ -1,5 +1,8 @@
 import React from 'react';
-import App from "../../App";
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import App from '../../../App';
+import taskActions from '../../../actions/task.actions';
 
 class TaskCrud extends React.Component {
     render() {
@@ -143,4 +146,15 @@ class TaskCrud extends React.Component {
         );
     }
 }
-export default TaskCrud;
+
+const mapStateToProps = (state) => {
+    return {
+        task: state.task
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        actions: bindActionCreators( {...taskActions}, dispatch )
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(TaskCrud);

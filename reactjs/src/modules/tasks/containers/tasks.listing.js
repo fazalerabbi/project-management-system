@@ -1,5 +1,10 @@
 import React from 'react';
-import App from '../../App';
+
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import taskActions from '../../../actions/task.actions';
+import App from '../../../App';
 
 class TasksListing extends React.Component {
     render() {
@@ -406,4 +411,16 @@ class TasksListing extends React.Component {
     }
 }
 
-export default TasksListing;
+
+const mapStateToProps = (state) => {
+    return {
+        task: state.task
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        actions: bindActionCreators({...taskActions}, dispatch)
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(TasksListing);

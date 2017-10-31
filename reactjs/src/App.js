@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from "./components/shared/components/header";
-import Footer from "./components/shared/components/footer";
+import Header from './modules/shared/components/header';
+import Footer from './modules/shared/components/footer';
 
 const App = (props) => {
     return (
